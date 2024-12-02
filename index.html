@@ -140,7 +140,7 @@
 
         <section id=intro-section class="main-sections">
             
-            <h2 id="title-1" class="section-title">Biography</h2>
+            <h2 id="title-0" class="section-title">Biography</h2>
 
             <p class="profile-description">
                 My expertise lies in autonomous vehicles, mobile and legged robotics, with a particular focus on control systems and AI-driven radar processing.
@@ -153,45 +153,44 @@
             
         </section>
 
-
+        <template id="project-cell-template">
+            <div class="project-cell">
+                <div class="projects-preview"><img src="media/images/products/pan-tilt-1.png" alt="preview"></div>
+                <h3 class="project-title">Pan-tilt tracker (Visual Servoing)</h3>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit tempore sapiente eius qui vel repudiandae rerum, temporibus voluptatem, labore perferendis, molestias alias. Magnam accusamus maxime explicabo sequi cupiditate? Doloremque, adipisci!
+                </p>
+            </div>
+        </template>
 
         <section id="project-section" class="main-sections">
 
-            <h2 id="title-2" class="section-title">Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-cell">
-                        <div class="projects-preview"><img src="media/images/products/pan-tilt-1.png" alt="preview"></div>
-                        <h3 class="project-title">Pan-tilt tracker (Visual Servoing)</h3>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit tempore sapiente eius qui vel repudiandae rerum, temporibus voluptatem, labore perferendis, molestias alias. Magnam accusamus maxime explicabo sequi cupiditate? Doloremque, adipisci!
-                        </p>
-                    </div>
-
-                    <div class="project-cell">
-                        <div class="projects-preview"><img src="media/images/products/pan-tilt-1.png" alt="preview"></div>
-                        <h3 class="project-title">Car simulator</h3>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit tempore sapiente eius qui vel repudiandae rerum, temporibus voluptatem, labore perferendis, molestias alias. Magnam accusamus maxime explicabo sequi cupiditate? Doloremque, adipisci!
-                        </p>
-                    </div>
-                    <div class="project-cell">
-                        <div class="projects-preview"><img src="media/images/products/kin-website-2.png" alt="preview"></div>
-                        <h3 class="project-title">Applied kinesiologist website</h3>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit tempore sapiente eius qui vel repudiandae rerum, temporibus voluptatem, labore perferendis, molestias alias. Magnam accusamus maxime explicabo sequi cupiditate? Doloremque, adipisci!
-                        </p>
-                    </div>
-              </div>
+            <h2 id="title-1" class="section-title">Projects</h2>
+                <div class="projects-grid"></div>
             </div>
 
             <div class="line-separator"></div>
-
-
         </section>
+
+        <script>
+            const images = [
+             'media/images/products/pan-tilt-1.png',
+             'media/images/products/pan-tilt-1.png',
+             'media/images/products/pan-tilt-1.png'
+            ];
+            const grid = document.getElementsByClassName('projects-grid')[0];
+            const template = document.getElementById('project-cell-template');
+        
+            images.forEach(src => {
+              const cell = template.content.cloneNode(true);
+              cell.querySelector('img').src = src;
+              grid.appendChild(cell);
+            });
+        </script>
 
         <section id="work-section" class="main-sections">
 
-            <h2 id="title-3" class="section-title">Work experience</h2>
+            <h2 id="title-2" class="section-title">Work experience</h2>
 
 
             </div>
@@ -206,7 +205,7 @@
     </main>
 
     <footer id ="contact-footer">
-        <h2 id="title-4">Contact</h2>
+        <h2 id="title-3">Contact</h2>
         <div id="footer-main-division">
 
             <form id="contactForm" method="post" action="form_handler.php">
