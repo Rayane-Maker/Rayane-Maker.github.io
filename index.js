@@ -1,4 +1,21 @@
-// import * as Common from './common.js';
+import * as Common from './common.js';
+
+
+
+const navbarButton = document.querySelector("#menu-button");
+const navbar = document.querySelector('nav');
+
+
+navbarButton.addEventListener('click', function () {
+  navbarButton.classList.toggle('active');
+  navbar.classList.toggle('active');
+})
+
+
+
+
+
+
 
 
 
@@ -100,15 +117,37 @@ class Particle {
     this.element.style.width = `${width}px`; // Set defined width
     this.element.style.height = `${height}px`; // Set defined height
     
-    // Create the image element as a child
-    this.img = document.createElement('img');
-    this.element.appendChild(this.img);
-    this.img.src = imageUrl; // Assign the image URL
-    this.img.style.width = '100%'; // Ensure the image fills the div
-    this.img.style.height = '100%'; // Ensure the image fits the div's height
-    this.img.style.objectFit = 'contain'; // Prevent stretching of the image
-    this.img.style.transition = 'filter 0.3s ease'; // Smooth transition for filter change
+    // Outside shape
+    this.outter = document.createElement('div');
+    this.outter.style.position = 'absolute'; // Set absolute positioning
+    this.element.appendChild(this.outter);
+    this.outter.src = imageUrl; // Assign the image URL
+    this.outter.style.width = '100%'; // Ensure the image fills the div
+    this.outter.style.height = '100%'; // Ensure the image fits the div's height
+    this.outter.style.objectFit = 'contain'; // Prevent stretching of the image
+    this.outter.style.borderRadius = `${height}px`;
+    this.outter.style.backgroundColor = `hsl(${160}, 80%, 70%)` ;
+    this.outter.style.transition = 'filter 0.3s ease'; // Smooth transition for filter change
+    const randomAlpha = Math.random() * 0.6 + 0.4;     // Apply color filter on the image to make it orange-like
+    this.outter.style.opacity = randomAlpha;
+    const randomHue = 130 + (Math.random() * 20 - 10); // Orange range: 30deg ±10deg
+    this.outter.style.filter = 'sepia(3) saturate(360) hue-rotate(170deg)'; // Apply filter to the outter element
+    this.outter.style.display = 'flex'; // Set absolute positioning
+    this.outter.style.justifyContent = 'center'; // Set absolute positioning
+    this.outter.style.alignItems = 'center'; // Set absolute positioning
 
+    // Core
+    // this.core = document.createElement('div');
+    // this.core.style.position = 'absolute'; // Set absolute positioning
+    // this.outter.appendChild(this.core);
+    // this.core.src = imageUrl; // Assign the image URL
+    // this.core.style.width = '70%'; // Ensure the image fills the div
+    // this.core.style.height = '70%'; // Ensure the image fits the div's height
+    // this.core.style.borderRadius = `${height}px`;
+    // this.core.style.backgroundColor = `hsl(${170}, 100%, 10%)` ;
+    // this.core.style.transition = 'filter 0.3s ease'; // Smooth transition for filter change
+    // this.core.style.opacity = randomAlpha;
+    // this.core.style.filter = 'sepia(3) saturate(360) hue-rotate(170deg)'; // Apply filter to the core element
 
     // Find the parent element
     this.parentUI = document.querySelector(parentSelector);
@@ -118,11 +157,6 @@ class Particle {
     // Append the element to the parent container
     this.parentUI.appendChild(this.element);
 
-    // Apply color filter on the image to make it orange-like
-    const randomAlpha = Math.random() * 0.6 + 0.4;
-    this.element.style.opacity = randomAlpha;
-    const randomHue = 130 + (Math.random() * 20 - 10); // Orange range: 30deg ±10deg
-    this.img.style.filter = 'sepia(3) saturate(360) hue-rotate(170deg)'; // Apply filter to the img element
 
     this.quadTree = quadTree;
     this.lines = new Array(0);
@@ -206,7 +240,7 @@ class Particle {
     
     // Apply the new position with smooth transition
     this.element.style.transition = `transform ${this.dt}}s linear`;
-    this.element.style.transform = `translate(${this.position.x - this.element.offsetWidth/2}px, ${this.position.y - 1.5*this.element.offsetHeight}px)`;
+    this.element.style.transform = `translate(${this.position.x - this.element.offsetWidth/2}px, ${this.position.y - this.element.offsetHeight/2}px)`;
 
 
     this.acceleration.x = 0;
@@ -431,9 +465,9 @@ class QuadTree {
 
 }
 
-let particleCount = 30;
+let particleCount = 25;
 let collisionDist = 180;
-let maxDepth = 1;
+let maxDepth = 2;
 let maxInitialAccelMagnitude = 0.3;
 let lineThickness = 1;
 let particleColor = "";
@@ -443,7 +477,7 @@ let quadTree = new QuadTree(new Point(0,0), parent.offsetWidth, parent.offsetHei
 
 
 for (let i=0; i < particleCount; i++ ){
-  new Particle('#hero-background', 'media/images/miscs/neuron.png', 7, 7, quadTree, maxInitialAccelMagnitude);
+  new Particle('#hero-background', 'media/images/miscs/neuron.png', 6, 6, quadTree, maxInitialAccelMagnitude);
 }
 
 
