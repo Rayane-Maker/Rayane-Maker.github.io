@@ -20,7 +20,7 @@ export default class Line {
     this.angle = Math.atan2(deltaY, deltaX);
 
     // UI Element
-    let color = '#7cabf7';
+    let color = '#369ecf'; //#418d94
     this.element = document.createElement('div');
     this.element.style.backgroundColor = color;
     this.element.style.position = 'absolute';

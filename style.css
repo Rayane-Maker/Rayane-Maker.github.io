@@ -7,15 +7,15 @@
   --theme-color2: #22242e;
   --theme-color3: #63474a;
   --theme-color4: #7d6262;
-  --theme-color44: #B2989A;
-  --theme-color444: #418d94;
+  --theme-color44: #369ecf;
+  --theme-color444: #418d94; /* #369ecf */
   --theme-color5: #09a97e;
   --theme-color55: #61F079;
   --theme-color6: #e9d556;
   --theme-color7: #fafce6;
   --theme-color8: #ffffffc6;
   --theme-color88: #ffffff49;
-  --theme-color888: #898991;
+  --theme-color888: #c9c9c9;
   --theme-color99: #ffffff;
   --theme-color100:#000000;
 }
@@ -29,8 +29,8 @@ body {
 }
 
 h1 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.8em;
+  font-family: 'Arial', cursive;
+  font-size: 1.1em;
   font-weight: bold;
   text-align: center;
   white-space: nowrap;
@@ -40,7 +40,7 @@ h1 {
 
 @media only screen and (max-width: 950px) {
   h1 {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 }
 
@@ -132,7 +132,7 @@ button {
   border: 2px solid #ffffff;
   color: inherit;
   border-radius: 5px;
-  background-color: var(--theme-color444);
+  background-color: var(--theme-color44);
 }
 
 
@@ -167,6 +167,14 @@ nav {
   transition: all 500ms ease;
 }
 
+#nav-main-content{
+  overflow: hidden;
+  margin-left: 0;
+  display: flex;
+  flex-grow: 1;
+}
+
+
 @media only screen and (min-width: 950px) {
   nav{
     width: 100%;
@@ -189,13 +197,14 @@ nav {
 
 
 #brand-and-logo {
-  margin: auto 0 auto 10px;
+  margin: auto 0 auto 0px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+  width: var(--dim-sidebar-width-ratio);
 }
 
 #logo {
@@ -216,17 +225,27 @@ nav {
   margin-right: 0px;
   margin-top: auto;
   margin-bottom: auto;
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.4em;
   font-weight: bold;
   white-space: nowrap;
   color: var(--theme-color99);
 }
 
+nav h1{
+  text-align: left;
+  margin-left: 0;
+  padding: 0 20px;
+}
+
 
 #nav-links {
-  margin: auto 0;
-  min-width: 65%;
+  margin: 0 0 0 0;
+  /* flex-grow: 1; */
+  height: 100%;
+  padding-right: 50px;
+}
+
+#nav-links li{
+  margin: auto 70px auto 0px ;
 }
 
 
@@ -235,16 +254,36 @@ nav {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   list-style: none;
+  margin: auto 0 auto 0;
+  flex-grow: 1;
+  padding: auto 20px;
+  height: 100%;
 }
 
 
 @media only screen and (max-width: 950px) {
 
-  #nav-links ul{
-    width: 100%;
+  #nav-links {
+    margin: auto 0;
+    min-width: 65%;
+  }
+
+  #nav-main-content{
+    justify-content: left;
+    align-items: start;
     flex-direction: column;
-    margin-top : 70px;
+    margin-top : 0px;
+    margin-bottom : 10px;
+  }
+
+  #nav-links ul{
+    flex-direction: column;
+    margin-top : 5px;
+    align-items: start;
+    margin-bottom : 10px;
+
   }
 
   #nav-links li{
@@ -255,7 +294,7 @@ nav {
 
 
 #nav-links a {
-  margin-top: 15px;
+  margin-top: 0px;
   font-family: 'Comic Neue', sans-serif; 
   font-weight: 700;
   /* 'Calibri', sans-serif; */
@@ -269,7 +308,7 @@ nav {
 #nav-links li :hover {
   cursor: pointer;
   transform: scale(1.1);
-  transition: 0.1s;
+  transition: all 0.5s;
   color: var(--theme-color6)
 }
 
@@ -422,7 +461,7 @@ nav {
   height: 100%;
   margin-bottom: 0;
   padding: 30px;
-  padding-top: 50px;
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -492,7 +531,17 @@ nav {
 .profile-establishment a{
   text-decoration: none;
   color: var(--theme-color444);
+  font-size: 1.1em;
+  font-weight: bolder;
+  transition: all 500ms;
 }
+.profile-establishment a:hover{
+  text-decoration: underline;
+  color: var(--theme-color444);
+  font-size: 1.1em;
+  font-weight: bolder;
+}
+
 
 .profile-description {
   margin: 30px 0;
@@ -501,13 +550,16 @@ nav {
   line-height: 1.6;
   font-size: 1em;
   font-family: Arial, Helvetica, sans-serif;
+  flex-grow: 1;
 }
 
 
 .profile-links{
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
 }
 
 .profile-links ul {
@@ -518,7 +570,8 @@ nav {
   list-style: none; 
   padding: 0; 
   margin-top: auto; 
-  margin-bottom: 100px;
+  margin-bottom: auto;
+  height: 50px;
 }
 
 .profile-links li {
@@ -607,7 +660,6 @@ nav {
 .main-sections {
   padding: 50px;
   background-size: cover;
-  color: var(--theme-color1);
   margin: 0;
   height: max-content;
   flex-direction: column;
@@ -618,24 +670,21 @@ nav {
 
 
 
-
-
-/************************* Section Presentation  ***************************/
-
 #intro-section{
   background: var(--theme-color99) no-repeat;
+  color: var(--theme-color1);
 }
 
 
 #project-section{
-  background: var(--theme-color444) no-repeat;
+  background: var(--theme-color44) no-repeat;
 }
 
 
 #work-section{
-  background: var(--theme-color99) no-repeat;
+  background: var(--theme-color444) no-repeat;
   background-size: cover;
-  color: var(--theme-color1);
+  color: var(--theme-color99);
   padding: 0px;
   margin: 0;
   height: max-content;
@@ -646,7 +695,9 @@ nav {
   padding: 50px;
 }
 
-
+#work-section h2{
+  color: var(--theme-color99);
+}
 
 .highlight {
   font: 1.7rem 'Comic Neue', sans-serif;
@@ -660,13 +711,13 @@ nav {
   transform: translateX(-50%);
   margin: 10px auto 15px 50%;
   font-weight: normal;
-  border: 2px solid var(--theme-color444);
+  border: 2px solid var(--theme-color44);
   background-color: inherit;
   font-size: 1em;
 }
 
 .resume-button:hover {
-  background-color: var(--theme-color444);
+  background-color: var(--theme-color44);
   color: var(--theme-color99);
   transition: 0.3s ease-in-out;
 }
@@ -745,47 +796,110 @@ nav {
   display: grid;
   max-width: 940px;
   margin: 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
   /* grid-auto-rows: minmax(auto, auto); */
-
 }
 
 .projects-grid > div {
   border: 1px solid var(--theme-color99);
-  border-radius: 5px;
-  background-color: var(--theme-color88);
-  padding: 1em;
-  color: var(--theme-color1);
+  border-radius: 2px;
+  /* background-color: var(--theme-color88); */
+  padding: 0.2em;
+  /* color: var(--theme-color1); */
+  padding-bottom: 20px;
 }
 
 
-@media only screen and (max-width:600px) {
-  .projects-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
+
 
 .projects-preview {
   width: 100%;
-  height: 250px;
+  height: 350px;
   margin-left: 50%;
   transform: translateX(-50%);
-  border: 1px solid var(--theme-color99);
-  border-radius: 3px;
+  border: 0px solid var(--theme-color99);
+  border-radius: 0px;
   background-color: var(--theme-color8);
+  overflow: hidden;
 }
 
 .projects-grid img {
-  width: 100%;
+  /* width: 80%;
   height: auto;
   margin-left: 50%;
-  transform: translateX(-50%);
+  margin-top: 0%;
+  transform: translate(-50%, 0%); */
+
+  margin-left: 50%;
+  margin-top: 0%;
+  transform: translate(-50%, 0%);
+  height: 110%;
+  width: auto;
+
+  /* min-width: 100%;
+  min-height: 100%; */
+  object-fit: cover;
+
+}
+
+.projects-title-description {
+  margin: 0 20px;
 }
 
 .projects-grid p {
   color: var(--theme-color99);
 }
+
+
+.project-domains-grid{
+  display: flex;
+  max-width: 940px;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(4px, 1fr));
+  gap: 2px;
+}
+
+.project-domains-grid > div {
+  border: 2px solid var(--theme-color88);
+  border-radius: 5px;
+  background-color: var(--theme-color99);
+  padding: 0.1em;
+  color: var(--theme-color44);
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: bold;
+  height: fit-content;
+  width: fit-content;
+  padding: 2px;
+}
+
+
+.project-tasks-list ul li{
+  list-style:disc;
+  color: var(--theme-color99);
+}
+
+.project-src-btn{
+  width: fit-content;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--theme-color1);
+  text-wrap: nowrap;
+  background-color: var(--theme-color99);
+  border: 0px;
+  font-size: 1em;
+}
+
+.project-src-btn img{
+  margin: 0;
+  height: 20px;
+  width: auto;
+}
+
+
 
 /* ******************************* FOOTER ********************************** */
 footer {
@@ -820,7 +934,7 @@ form {
   max-width: 700px;
   text-align: center;
   width: 40%;
-  min-width: 300px; */
+  min-width: 300px;
 }
 
 input, textarea, footer button, select {
@@ -960,6 +1074,43 @@ footer button:hover {
   height: 350px;
   width: 70%;
 }
+
+/* ******************************** RESUME PAGE ************************************** */
+
+#pdf-section {
+  background: var(--theme-color99) no-repeat;
+  background-size: cover;
+  color: var(--theme-color1);
+  margin: 80px 0 0 70px;
+  padding: 0;
+  height: 800px;
+  width: 65%;    
+  flex-direction: column;
+  /* overflow: hidden; */
+}
+
+.pdf-container {
+  background: var(--theme-color99) no-repeat;
+  background-size: cover;
+  color: var(--theme-color1);
+  margin: 0;
+  padding: 0;
+  height: 100%;  
+  width: 100%;   
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Allows overlay elements to be positioned absolutely */
+
+}
+
+.iframe {
+  height: 100%;
+  width: 100%;
+  border: none; /* Removes any default iframe border */
+  border-radius: 10px; /* Keeps the rounded corners if desired */
+}
+
 
 /* ******************************** EFFECTS ************************************** */
 

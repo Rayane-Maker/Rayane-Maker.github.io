@@ -34,7 +34,7 @@ Common.goToSection('section2-link', 'work-section', navbarHeight);
 
 let particleCount = 25;
 let collisionDist = 180;
-let maxDepth = 2;
+let maxDepth = 1;
 let maxInitialAccelMagnitude = 0.3;
 const parent = document.querySelector('#hero-background');
 let quadTree = new QuadTree(new Point(0,0), parent.offsetWidth, parent.offsetHeight, null, 0, 0, maxDepth, collisionDist);

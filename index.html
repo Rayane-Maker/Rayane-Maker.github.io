@@ -19,45 +19,45 @@
     <header id="header">
 
         <nav>
-            <!-- <a id="brand-and-logo" href="#">
-                <div id="logo">
-                    <img src="media/images/logos/logo_circle.png" alt="logo">
+            <div id = "nav-main-content">
+                <a id="brand-and-logo" href="#">
+                    <!-- <div id="logo">
+                        <img src="media/images/logos/logo_circle.png" alt="logo">
+                    </div> -->
+            
+                    <div id="brand">
+                        <h1> Rayane Geta </h1>
+                    </div>
+                </a>
+                <div id="nav-links">
+                    <ul>
+            
+                        <li>
+                            <a class=home-link href="#">
+                                Home
+                            </a>
+                        </li>
+            
+                        <li>
+                            <a class="section1-link" href="#title-1">
+                                Projects
+                            </a>
+                        </li>
+            
+                        <li>
+                            <a class="section2-link"  href="#title-2">
+                                Work Experience
+                            </a>
+                        </li>
+            
+                        <li>
+                            <a class="about-link" href="about.html">
+                                CV
+                            </a>
+                        </li>
+            
+                    </ul>
                 </div>
-        
-                <div id="brand">
-                    Rayane GETA
-                </div>
-        
-            </a> -->
-
-            <div id="nav-links">
-                <ul>
-        
-                    <li>
-                        <a class=home-link href="#">
-                            Home
-                        </a>
-                    </li>
-        
-                    <li>
-                        <a class="section1-link" href="#title-1">
-                            Projects
-                        </a>
-                    </li>
-        
-                    <li>
-                        <a class="section2-link"  href="#title-2">
-                            Work Experience
-                        </a>
-                    </li>
-        
-                    <li>
-                        <a class="about-link" href="about.html">
-                            CV
-                        </a>
-                    </li>
-        
-                </ul>
             </div>
         
             <div id="menu-button" class="sandwich-button">
@@ -156,10 +156,22 @@
         <template id="project-cell-template">
             <div class="project-cell">
                 <div class="projects-preview"><img src="media/images/products/pan-tilt-1.png" alt="preview"></div>
-                <h3 class="project-title">Pan-tilt tracker (Visual Servoing)</h3>
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit tempore sapiente eius qui vel repudiandae rerum, temporibus voluptatem, labore perferendis, molestias alias. Magnam accusamus maxime explicabo sequi cupiditate? Doloremque, adipisci!
-                </p>
+                <div class="projects-title-description">
+                    <h3 class="project-title">Pan-tilt tracker (Visual Servoing)</h3>
+                    <div class="project-domains-grid">
+                        <div >Visual Servoing</div>
+                        <div>C++</div>
+                        <div >Java</div>
+                        <div>Android Development</div>
+                    </div>
+                    <p class="project-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum praesentium unde earum accusantium, quisquam quae deserunt quia labore neque, beatae rem accusamus nesciunt quibusdam obcaecati reiciendis! Assumenda maiores nihil error.</p>
+                    <ul class="project-tasks-list">
+                        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
+                    </ul>
+                    <button class="project-src-btn"><img src="media/images/icons/github-logo.png">Source code on GitHub</button>
+                </div>
             </div>
         </template>
 
@@ -174,9 +186,9 @@
 
         <script>
             const images = [
+             'media/images/products/pan-tilt-2.jpg',
              'media/images/products/pan-tilt-1.png',
-             'media/images/products/pan-tilt-1.png',
-             'media/images/products/pan-tilt-1.png'
+             'media/images/products/download.gif'
             ];
             const grid = document.getElementsByClassName('projects-grid')[0];
             const template = document.getElementById('project-cell-template');
@@ -191,8 +203,10 @@
         <section id="work-section" class="main-sections">
 
             <h2 id="title-2" class="section-title">Work experience</h2>
-
-
+            <div class="work-grid">
+                <img src = "media/images/logos/aerix-systems.png">
+                <img src = "media/images/logos/logo-critt-albi.jpg">
+            </div>
             </div>
 
             <div class="line-separator"></div>
@@ -228,17 +242,17 @@
                         +###############
                         <a><img src="media/images/icons/phone_icon.ico" alt=""></a>
                     </li> -->
-                    <!-- 
+                    
                     <li id="instagram-button">
                         <a href="https://www.instagram.com/catherine.geta/"> <i class="fa fa-instagram"></i>
                             &nbsp;&nbsp;&nbsp;catherine.geta
                         </a>
-                    </li> -->
+                    </li>
 
-                    <!-- <li id="location-button">
+                    <li id="location-button">
                         France, Brest
                         <a href="#footer-map-division"><img src="media/images/icons/location_pointer_icon.ico" alt=""></a>
-                    </li> -->         
+                    </li>         
                 </ul>
 
             </div>
