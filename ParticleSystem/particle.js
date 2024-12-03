@@ -1,8 +1,12 @@
 import QuadTree from './quadTree.js';
+import Point from './point.js';
 import Line from './line.js';
+import popAt from './utils.js';
+
+let lineThickness = 1;
 
 export default class Particle {
-    constructor(parentSelector, imageUrl, width, height, quadTree, maxInitialAccelMagnitude=1) {
+    constructor(parentSelector, imageUrl, width, height, quadTree, maxInitialAccelMagnitude=1, collisionDist) {
   
       // Create the element
       this.element = document.createElement('div');
@@ -46,7 +50,7 @@ export default class Particle {
       this.parentUI = document.querySelector(parentSelector);
       this.parentWidth = this.parentUI.offsetWidth;
       this.parentHeight = this.parentUI.offsetHeight;
-  
+
       // Append the element to the parent container
       this.parentUI.appendChild(this.element);
   
@@ -56,7 +60,8 @@ export default class Particle {
   
       this.mass = 5;
       this.dt = 1;
-  
+      this.collisionDist = collisionDist;
+
       // Initial kinematics
       this.maxInitialAccelMagnitude = maxInitialAccelMagnitude;
       this.speedMagnitude = 0;
@@ -85,19 +90,19 @@ export default class Particle {
   
       
       // Set initial position
-      this.updatePosition(parent);
+      this.updatePosition();
   
       // Start moving the neuron
-      this.move(parent);
+      this.move();
     }
   
     
     // Function to update the position based on current position and direction
-    updatePosition(parent) {
+    updatePosition() {
       this.last = performance.now();
   
-      this.parentWidth = parent.offsetWidth;
-      this.parentHeight = parent.offsetHeight;
+      this.parentWidth = this.parentUI.offsetWidth;
+      this.parentHeight = this.parentUI.offsetHeight;
   
       this.speed.x += this.acceleration.x * this.dt;
       this.speed.y += this.acceleration.y * this.dt;
@@ -106,11 +111,6 @@ export default class Particle {
       this.position.x += this.speed.x * this.dt;
       this.position.y += this.speed.y * this.dt;
       
-  
-  
-      // Ensure the ball stays within the container bounds (bouncing logic)
-      const parentWidth = parent.offsetWidth;
-      const parentHeight = parent.offsetHeight;
       
        // Bounce off the walls
       let left = this.element.offsetWidth/2;
@@ -144,7 +144,7 @@ export default class Particle {
     }
   
     // Function to move the ball randomly (accumulating position over time)
-    move(parent) {
+    move() {
   
       // Update position based on direction and speed
       this.updatePosition(parent);
@@ -158,7 +158,7 @@ export default class Particle {
         let deltaX = this.position.x - this.position.pairs[j].x;
         let deltaY = this.position.y - this.position.pairs[j].y;
         let d = deltaX*deltaX + deltaY*deltaY;
-        if (Math.sqrt(d) > collisionDist){
+        if (Math.sqrt(d) > this.collisionDist){
             popAt(this.position.pairs, this.position.pairs[j]);
             this.eraseLine(j);
   

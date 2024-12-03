@@ -1,3 +1,5 @@
+import Point from './point.js';
+
 export default class Line {
   constructor(parentUI, start, end, thickness) {
     this.parentUI = parentUI;

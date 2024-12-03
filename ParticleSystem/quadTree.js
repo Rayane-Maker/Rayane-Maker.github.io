@@ -3,7 +3,7 @@ import Point from './point.js';
 
 export default class QuadTree {
   
-    constructor(position, width, height, parent=null, depth=0, index=0, maxDepth=2) {
+    constructor(position, width, height, parent=null, depth=0, index=0, maxDepth=2, collisionDist) {
       this.position = position;
       this.width = width;
       this.height = height;
@@ -17,6 +17,7 @@ export default class QuadTree {
       this.isRendering = false;
       this.parent = parent;
       this.maxDepth = maxDepth;
+      this.collisionDist = collisionDist;
     }
   
   
@@ -44,7 +45,7 @@ export default class QuadTree {
             let deltaX = this.data[i].x - this.data[j].x;
             let deltaY = this.data[i].y - this.data[j].y;
             let d = deltaX*deltaX + deltaY*deltaY;
-            if (Math.sqrt(d) <= collisionDist){
+            if (Math.sqrt(d) <= this.collisionDist){
               if (this.data[i].pairs.length > 0){
               if (!this.data[i].pairs.includes(this.data[j])){
                 this.data[i].pairs.push(this.data[j]);
@@ -106,7 +107,7 @@ export default class QuadTree {
         let position = new Point(this.position.x + ((i%2)*this.width/2), this.position.y + Math.floor(i/2)*this.height/2); //Compute absolute position of child
         let width = this.width/2;
         let height = this.height/2;
-        this.childs[i] = new QuadTree(position, width, height, this, this.depth + 1, i, this.maxDepth);
+        this.childs[i] = new QuadTree(position, width, height, this, this.depth + 1, i, this.maxDepth, this.collisionDist);
       }
       this.subdivided = true;
       return this.childs;

@@ -38,7 +38,7 @@ h1 {
   text-shadow: 1px 3px 5px rgb(0, 0, 0);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 950px) {
   h1 {
     font-size: 2em;
   }
@@ -54,7 +54,7 @@ h2 {
   margin-left: 1em;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 950px) {
   h2 {
     margin-left: 0;
     text-align: left;
@@ -62,7 +62,7 @@ h2 {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 950px) {
   h2 {
     margin-left: 0;
     text-align: center;
@@ -141,7 +141,7 @@ header{
   width: max-content;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 950px) {
   header{
     width: 100%;
     margin-left: 0;
@@ -167,7 +167,7 @@ nav {
   transition: all 500ms ease;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 950px) {
   nav{
     width: 100%;
     margin-left: 0;
@@ -175,7 +175,7 @@ nav {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 950px) {
   nav{
     width: 100%;
     margin-left: 0;
@@ -239,7 +239,7 @@ nav {
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 950px) {
 
   #nav-links ul{
     width: 100%;
@@ -322,23 +322,21 @@ nav {
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 950px) {
   #menu-button{
     display: flex;
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 950px) {
   #menu-button{
     display: none;
   }
 }
 
-
-
-
-
 /* ****************************************** NAVBAR END****************************************** */
+
+
 
 
 /* ****************************************** HERO ****************************************** */
@@ -362,11 +360,12 @@ nav {
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 950px) {
   #hero {
     margin: 0;
     margin-top: var(--dim-navbar-height);
-    z-index: -10;    position:relative;
+    z-index: -10;    
+    position:relative;
     width: 100%;
     height: 500px;
   }
@@ -418,11 +417,12 @@ nav {
 #hero-content {
   position: absolute;
   top: 0;
-  width: auto;
+  left: 1px;
+  right: 1px;
   height: 100%;
   margin-bottom: 0;
   padding: 30px;
-  padding-top: 14%;
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -559,10 +559,6 @@ nav {
   min-width: 300px;
 }
 
-
-
-
-
 /* ****************************************** HERO END ****************************************** */
 
 
@@ -579,7 +575,7 @@ nav {
 
 
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 950px) {
   main {
     margin-top: var(--dim-navbar-height);
   }
@@ -587,13 +583,13 @@ nav {
   main, footer {
     overflow: hidden;
     margin-left: var(--dim-sidebar-width-ratio);
-    width: calc(100% - var(--dim-sidebar-width-ratio));
+    /* width: calc(100% - var(--dim-sidebar-width-ratio)); */
   }
 
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 950px) {
 
   main {
     margin-top: 0;
@@ -746,8 +742,13 @@ nav {
 
 
 .projects-grid {
+  display: grid;
   max-width: 940px;
   margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+  gap: 10px;
+  /* grid-auto-rows: minmax(auto, auto); */
+
 }
 
 .projects-grid > div {
@@ -758,12 +759,6 @@ nav {
   color: var(--theme-color1);
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-}
 
 @media only screen and (max-width:600px) {
   .projects-grid {
@@ -777,13 +772,13 @@ nav {
   margin-left: 50%;
   transform: translateX(-50%);
   border: 1px solid var(--theme-color99);
-  border-radius: 5px;
+  border-radius: 3px;
   background-color: var(--theme-color8);
 }
 
 .projects-grid img {
-  width: auto;
-  height: 100%;
+  width: 100%;
+  height: auto;
   margin-left: 50%;
   transform: translateX(-50%);
 }
@@ -824,7 +819,7 @@ form {
   margin-top: 5%;
   max-width: 700px;
   text-align: center;
-  /* width: 40%;
+  width: 40%;
   min-width: 300px; */
 }
 
@@ -861,25 +856,22 @@ footer button:hover {
 }
 
 #informations {
-  /* width: 20%; */
+  width: fit-content;
   padding: 0px;
   margin-top: 5%;
-  margin-left: 5%;
+  margin-left: 50px;
+  margin-right: 50px;
   color: var(--theme-color99);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 950px) {
   #form, #informations {
     margin-left: 10%;
     margin-right: 10%;
   }
 }
 
-@media only screen and (max-width: 600px) {
-  #informations {
-    margin-left: 0%;
-  }
-}
+
 
 #informations ul {
   display: flex;

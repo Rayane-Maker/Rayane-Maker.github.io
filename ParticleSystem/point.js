@@ -1,5 +1,3 @@
-import * as Common from './common.js';
-
   
   export default class Point {
     constructor(x,y, pairs=new Array(0)) {
