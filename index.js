@@ -35,7 +35,7 @@ Common.goToURL('about-link', "media/pdfs/resume.pdf");
 
 /************************ HERO PARTICLE SYSTEM ****************************** */
 
-let particleCount = 30;
+let particleCount = 25;
 let collisionDist = 180;
 let maxDepth = 2;
 let maxInitialAccelMagnitude = 0.3;
