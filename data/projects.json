@@ -1,0 +1,139 @@
+[
+    {
+        "image": "./media/images/products/pan-tilt.gif",
+        "title": "Pan Tilt Tracker (Visual Servoing)",
+
+        "description": "Developed a motorized smartphone holder paired with an Android video recording app, enabling pan-and-tilt tracking and gesture controls for recording. Originally created for filming my dance practice sessions, this project will be expanded with an upcoming feature currently in development, aimed at facilitating the creation and practice of dance choreographies (Coming Soon!).",
+                "tags": [
+                    "Deep Learning",
+                    "Pose Estimation",
+                    "Visual Servoing",
+                    "PID",
+                    "Tensorflow",
+                    "OpenCV",
+                    "Android Development",
+                    "Java",
+                    "C++",
+                    "ESP32",
+                    "Arduino",
+                    "SolidWorks",
+                    "3D Printing"
+                ],
+                "tasks": [
+                    "Implemented TensorFlow-based Pose Estimation (PoseNet) in the Android app",
+                    "Developed PID Controller within the Android app",
+                    "Enabled Bluetooth communication between the app and the holder",
+                    "Designed and programmed the embedded board (Arduino for V1, ESP32 for V2)",
+                    "Designed and developed the entire hardware, including mechanical, electrical, and CAD models",
+                    "3D-printed parts"
+                ]
+            },
+        
+        
+            {
+                "image": "./media/images/products/funanddrive.gif",
+                "title": "Fun And Drive (Car Game Simulator)",
+                "description": "Developed an open-world vehicle simulator game using Unity, featuring custom drivetrain and wheel physics simulations. While the primary focus is on cars, the game is designed to eventually support other vehicles, including bikes, airplanes, helicopters, and boats.",
+                "tags": [
+                    "Game Development",
+                    "Physics Simulation",
+                    "Wheel Physics",
+                    "Car Physics",
+                    "Unity",
+                    "C#",
+                    "3D Game Geometry"
+                ],
+                "tasks": [
+                    "Implemented custom drivetrain and wheel physics.",
+                    "Integrated clutch simulation within the drivetrain.",
+                    "Implemented classic AI algorithms for virtual opponents using geometry-based techniques.",
+                    "Developed a race manager with a participant ranking system (1st, 2nd, 3rd, etc.).",
+                    "Developed a dynamic player-following camera system.",
+                    "Designed and built a GUI dashboard system."
+                ]
+            },
+
+            {
+                "image": "./media/images/products/multicam.gif",
+                "title": "Multicam (School Project)",
+                "description": "Collaborated in a team to develop a real-time multi-camera system for tracking, monitoring, and localizing individuals in potential danger during emergencies, enhancing firefighter operations through a tablet interface.",
+                "tags": [
+                    "Emergency Assistance",
+                    "Navigation Guidance",
+                    "Deep Learning / YOLOv7",
+                    "Pose Estimation",
+                    "Computer Vision",
+                    "Shortest Path / A* Algorithm",
+                    "Android Application",
+                    "Eco-Friendly",
+                    "Real-Time"
+                ],
+                "tasks": [
+                    "Led the team, enhancing leadership, communication, and teamwork skills.",
+                    "Developed central server software for camera video reception, image processing, and human activity classification.",
+                    "Implemented network management for seamless multi-camera operation.",
+                    "Programmed C++ firmware for ESP32-Cam modules.",
+                    "Contributed to Android tablet app development for video feedback and victim information display."
+                ],
+                "github": "https://github.com/Al3xandreD/MultiCam"
+            },
+
+
+            {
+                "image": "./media/images/products/portfolio.gif",
+                "title": "Portfolio Website",
+                "description": "Designed and developed my portfolio website from scratch.",
+                "tags": [
+                    "Web Development",
+                    "QuadTree",
+                    "Particle System",
+                    "Web Design",
+                    "UX Design",
+                    "UI Design",
+                    "Responsive Design",
+                    "HTML",
+                    "CSS",
+                    "JavaScript"
+                ],
+                "tasks": [
+                    "Built a fully responsive portfolio website.",
+                    "Created a particle system for dynamic visuals.",
+                    "Optimized particle collision detection using a custom quadtree system developed from scratch.",
+                    "Deployed the website on GitHub Pages."
+                ],
+                "link": "https://rayanegeta.github.io"
+            },
+            
+
+            {
+                "image": "./media/images/products/kin-website-2.png",
+                "title": "Applied Kinesiologist Website",
+                "description": "Designed and hosted a showcase website from scratch using HTML, CSS, and JavaScript to promote an applied kinesiologist's services and enable clients to schedule appointments via a contact form.",
+                "tags": [
+                    "Web Development",
+                    "Web Design",
+                    "UX Design",
+                    "UI Design",
+                    "Graphic Design",
+                    "Responsive Design",
+                    "HTML",
+                    "CSS",
+                    "JavaScript"
+                ],
+                "tasks": [
+                    "Developed a fully responsive website.",
+                    "Adapted the UI to align with the client’s brand identity.",
+                    "Integrated a contact form with email functionality using PHP.",
+                    "Implemented parallax effects for enhanced visual appeal.",
+                    "Designed a logo and a business card.",
+                    "Hosted the website on Hostinger."
+                ],
+
+                "link": "https://catherine-kinesio.fr/"
+            }
+            
+
+            
+            
+            
+        ]

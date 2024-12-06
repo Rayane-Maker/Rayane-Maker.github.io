@@ -1,8 +1,8 @@
-import * as Common from './common.js';
-import QuadTree from './ParticleSystem/quadTree.js';
-import Particle from './ParticleSystem/particle.js';
-import Point from './ParticleSystem/point.js';
-
+import * as Common from './scripts/common.js';
+import QuadTree from './scripts/particleSystem/quadTree.js';
+import Particle from './scripts/particleSystem/particle.js';
+import Point from './scripts/particleSystem/point.js';
+import loadGridData from './scripts/fileHandling/jsonLoader.js'
 
 
 
@@ -18,23 +18,26 @@ navbarButton.addEventListener('click', function () {
 const navbarHeight = document.querySelector('nav').offsetHeight;
 
 
-// // Go to first section via nav button
+// Home
 Common.goToSection('home-link', 'header', navbarHeight);
 
 
-// // Go to first section via nav button
+// Projects
 Common.goToSection('section1-link', 'project-section', navbarHeight);
 
 
-// // Go to first section via nav button
+// Work experiences
 Common.goToSection('section2-link', 'work-section', navbarHeight);
+
+// CV
+Common.goToURL('about-link', "media/pdfs/resume.pdf");
 
 
 /************************ HERO PARTICLE SYSTEM ****************************** */
 
-let particleCount = 25;
-let collisionDist = 180;
-let maxDepth = 1;
+let particleCount = 30;
+let collisionDist = 200;
+let maxDepth = 4;
 let maxInitialAccelMagnitude = 0.3;
 const parent = document.querySelector('#hero-background');
 let quadTree = new QuadTree(new Point(0,0), parent.offsetWidth, parent.offsetHeight, null, 0, 0, maxDepth, collisionDist);
@@ -45,8 +48,9 @@ for (let i=0; i < particleCount; i++ ){
 }
 
 
+/********************* Project Grid ********************** */
+loadGridData("projects-grid", "project-cell-template");
 
 
 
-
-
+/**********************  Form  ************************ */

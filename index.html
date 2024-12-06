@@ -51,8 +51,8 @@
                         </li>
             
                         <li>
-                            <a class="about-link" href="about.html">
-                                CV
+                            <a class="about-link" href="media/pdfs/resume.pdf">
+                                Resume
                             </a>
                         </li>
             
@@ -143,33 +143,26 @@
             <h2 id="title-0" class="section-title">Biography</h2>
 
             <p class="profile-description">
-                My expertise lies in autonomous vehicles, mobile and legged robotics, with a particular focus on control systems and AI-driven radar processing.
-                I thrive at the intersection of hardware and software. Feel free to explore some of my projects !
+                My expertise lies in autonomous vehicles and embedded software development, 
+                with a particular focus on control systems and AI-driven radar processing. 
+                I enjoy applying my creative mindset to solve challenges and embrace a 'learning by doing' approach as my guiding principle. 
+                I thrive at the intersection of hardware and software. Feel free to explore some of my projects!
             </p>            
 
-            <button class="resume-button">
+            <button class="about-link", id="resume-button">
                 Resume
             </button>
             
         </section>
 
-        <template id="project-cell-template">
+        <template class="project-cell-template">
             <div class="project-cell">
-                <div class="projects-preview"><img src="media/images/products/pan-tilt-1.png" alt="preview"></div>
-                <div class="projects-title-description">
-                    <h3 class="project-title">Pan-tilt tracker (Visual Servoing)</h3>
-                    <div class="project-domains-grid">
-                        <div >Visual Servoing</div>
-                        <div>C++</div>
-                        <div >Java</div>
-                        <div>Android Development</div>
-                    </div>
-                    <p class="project-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum praesentium unde earum accusantium, quisquam quae deserunt quia labore neque, beatae rem accusamus nesciunt quibusdam obcaecati reiciendis! Assumenda maiores nihil error.</p>
-                    <ul class="project-tasks-list">
-                        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
-                        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
-                        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
-                    </ul>
+                <div class="projects-preview"><img alt="preview"></div>
+                <div class="projects-content">
+                <div class="project-title-and-link"><h3 class="project-title"></h3><button><img class="project-link-btn", src="media/images/icons/external-link.png", alt="link"></button></div>
+                    <div class="project-tags-container"></div>
+                    <p class="project-description"></p>
+                    <ul class="project-tasks-container"></ul>
                     <button class="project-src-btn"><img src="media/images/icons/github-logo.png">Source code on GitHub</button>
                 </div>
             </div>
@@ -178,34 +171,18 @@
         <section id="project-section" class="main-sections">
 
             <h2 id="title-1" class="section-title">Projects</h2>
-                <div class="projects-grid"></div>
+                <div id="projects-grid"></div>
             </div>
 
             <div class="line-separator"></div>
         </section>
 
-        <script>
-            const images = [
-             'media/images/products/pan-tilt-2.jpg',
-             'media/images/products/pan-tilt-1.png',
-             'media/images/products/download.gif'
-            ];
-            const grid = document.getElementsByClassName('projects-grid')[0];
-            const template = document.getElementById('project-cell-template');
-        
-            images.forEach(src => {
-              const cell = template.content.cloneNode(true);
-              cell.querySelector('img').src = src;
-              grid.appendChild(cell);
-            });
-        </script>
-
         <section id="work-section" class="main-sections">
 
             <h2 id="title-2" class="section-title">Work experience</h2>
             <div class="work-grid">
-                <img src = "media/images/logos/aerix-systems.png">
-                <img src = "media/images/logos/logo-critt-albi.jpg">
+                <a href="https://www.aerix-systems.com/"><img src = "media/images/logos/aerix-systems.png"></a>                
+                <a href="https://www.critt-autom.com/"><img src = "media/images/logos/logo-critt-albi.jpg"></a>
             </div>
             </div>
 
@@ -222,8 +199,7 @@
         <h2 id="title-3">Contact</h2>
 
         <div id="footer-main-division">
-
-            <form id="contactForm" method="post" action="form_handler.php">
+            <form id="contactForm" action="https://formspree.io/f/xqakjggn" method="POST">
                 <input placeholder="Name" name="name" required>
                 <input placeholder="E-mail" name="email" required>
                 <textarea placeholder="Message..." name="message" required></textarea>
@@ -234,7 +210,7 @@
                 <ul>
                     <li>
                         rayane.geta@gmail.com
-                        <a href="mailto:rayane.geta@gmail.com"><img src="media/images/icons/mail_icon.ico" alt=""></a>
+                        <a href="mailto:rayane.geta@gmail.com"><img src="media/images/icons/email-logo.png" alt=""></a>
                     </li>
 
 
@@ -242,16 +218,11 @@
                         +###############
                         <a><img src="media/images/icons/phone_icon.ico" alt=""></a>
                     </li> -->
-                    
-                    <li id="instagram-button">
-                        <a href="https://www.instagram.com/catherine.geta/"> <i class="fa fa-instagram"></i>
-                            &nbsp;&nbsp;&nbsp;catherine.geta
-                        </a>
-                    </li>
+                
 
                     <li id="location-button">
                         France, Brest
-                        <a href="#footer-map-division"><img src="media/images/icons/location_pointer_icon.ico" alt=""></a>
+                        <a href="#footer-map-division"><img src="media/images/icons/location.png" alt=""></a>
                     </li>         
                 </ul>
 
@@ -272,12 +243,10 @@
         <div id="last-line"></div>
         <div id="copyright-and-icons">
             <div id="copyright">
-                <span>© 2024, Made by RGX</span>
+                <span>© 2024, Made by <a href="#">RGX</a></span>
             </div>
             <div id="icons">
-                <a href="mailto:contact@catherine-kinesio.fr"><i class="fa fa-envelope"></i></a>
-                <a href="https://www.facebook.com/Katesens.art"><i class="fa fa-facebook"></i></a>
-                <a href="https://www.instagram.com/catherine.geta/"><i class="fa fa-instagram"></i></a>
+                <a href="mailto:rayane.geta@gmail.com"><i class="fa fa-envelope"></i></a>
             </div>
         </div>
     </footer>
@@ -293,7 +262,7 @@
             document.getElementById('navbar').innerHTML = data;
         });
 </script> -->
-
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script type="module" src="./index.js"></script>
 
 
