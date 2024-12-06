@@ -36,8 +36,8 @@ Common.goToURL('about-link', "media/pdfs/resume.pdf");
 /************************ HERO PARTICLE SYSTEM ****************************** */
 
 let particleCount = 30;
-let collisionDist = 200;
-let maxDepth = 4;
+let collisionDist = 180;
+let maxDepth = 2;
 let maxInitialAccelMagnitude = 0.3;
 const parent = document.querySelector('#hero-background');
 let quadTree = new QuadTree(new Point(0,0), parent.offsetWidth, parent.offsetHeight, null, 0, 0, maxDepth, collisionDist);
