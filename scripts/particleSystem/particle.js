@@ -150,6 +150,7 @@ export default class Particle {
       this.updatePosition(parent);
       this.quadTree.add(this.position);
       this.quadTree.remove(this.position);
+      //kjdv
       //this.quadTree.render(parent);
   
   
