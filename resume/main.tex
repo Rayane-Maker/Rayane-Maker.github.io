@@ -1,0 +1,323 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=1.1 cm, % seperation between body and page edge from the top
+    bottom= 1 cm, % seperation between body and page edge from the bottom
+    left=2 cm, % seperation between body and page edge from the left
+    right=2 cm, % seperation between body and page edge from the right
+    footskip=1.0 cm, % seperation between body and footer
+    % showframe % for debugging 
+]{geometry} % for adjusting page geometry
+\usepackage[explicit]{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 79, 144} % define primary color
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome5} % for using icons
+\usepackage{amsmath} % for math
+\usepackage[
+    pdftitle={Rayane GETA's Resume},
+    pdfauthor={Rayane GETA},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage[default, type1]{sourcesanspro} 
+\usepackage{fontawesome5}
+
+% Some settings:
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0.15cm} % set column seperation
+\makeatletter
+\let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+    \color{gray}\textit{\small }
+}{}{} % replace number by desired string
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{
+    % avoid page breaking right after the section title
+    \needspace{4\baselineskip}
+    % make the font size of the section title large and color it with the primary color
+    \Large\color{primaryColor}
+}{
+}{
+}{
+    % print bold title, give 0.15 cm space and draw a line of 0.8 pt thickness
+    % from the end of the title to the end of the body
+    \textbf{#1}\hspace{0.15cm}\titlerule[0.8pt]\hspace{-0.1cm}
+}[] % section title formatting
+
+\titlespacing{\section}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    0.3 cm
+}{
+    % bottom space:
+    0.2 cm
+} % section title spacing
+
+% Custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0.2 cm + 0.00001 cm
+    }{
+        0.2 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{twocolentrysame}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 8cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+% Header format
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\color{primaryColor}\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+
+
+
+% Begin Document
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox{\ANDbox}\savebox\ANDbox{}
+    
+    \placelastupdatedtext
+    \begin{header}
+        \fontsize{22 pt}{22 pt}
+        \textbf{AI and Mechatronics Engineer}\\
+        \vspace{0.3 cm}
+        \fontsize{15 pt}{15 pt}
+        \textbf{Rayane GETA --- Seeking a CDI, CDD, VIE}
+        \vspace{0.3 cm}
+
+        \normalsize
+        \mbox{{\footnotesize\faMapMarker*}\hspace*{0.1cm}Open to relocation}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}rayane.geta@gmail.com}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{{\footnotesize\faPhone*}\hspace*{0.13cm}+33763570092}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\href{https://www.linkedin.com/in/rayane-geta}{\normalsize\faLinkedin\hspace*{0.13cm}rayane-geta}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\href{https://rayane-maker.github.io}{\normalsize\faGlobeAmericas\hspace*{0.13cm}rayane-maker.github.io}}%
+
+    \end{header}
+
+    \vspace{0.2 cm - 0.2 cm}
+
+
+
+
+
+  
+
+
+
+    
+
+
+
+    
+ \section{Education}
+    \begin{twocolentry}{
+        Brest, France \newline
+        September 2023 - Present
+    }
+        \textbf{ENSTA (National Institute of Advanced Technologies)}, Master of Science
+        \begin{highlights}
+            \item \textbf{Relevant Coursework:} Computer Vision, Radar and Remote Sensing, Software Engineering, Machine Learning, Linear and Nonlinear Optimization\\
+        \end{highlights}
+    \end{twocolentry}
+
+    \vspace{0.1cm}
+
+    \begin{twocolentry}{
+        Limoges, France \newline
+        September 2021 - Present
+    }
+        \textbf{ENSIL-ENSCI (National Graduate Engineering School of Limoges)}, Master of Science
+        \begin{highlights}
+            \item \textbf{Relevant Coursework:} Control Systems, %Powertrain Engineering,% 
+            Robotics, Mechanical Design.
+        \end{highlights}
+    \end{twocolentry}
+
+
+
+ \section{Experience}
+    \begin{twocolentry}{
+        Bordeaux, France \newline
+        April 2024 – August 2024
+    }
+        \textbf{Aerix Systems}, Embedded System and AI Engineer Intern
+        \begin{highlights}
+            \item Developed monocular visual odometry for an omnidirectional drone in C++.
+            \item Integrated a deep-neural network for 3D vision and odometry enhancement.
+            \item Designed multi-threaded real-time software architecture with SOLID principles.\\
+
+            %\item Applied SOLID design principles to build high-quality, modular software solution.\\%
+           % \item Documented the software with doxygen.\\ %
+        \end{highlights}
+    \end{twocolentry}
+    
+    \begin{twocolentry}{
+        Albi, France \newline
+        May 2023 – August 2023
+    }
+        \textbf{CRITT Automatisation \& Robotique}, Mechatronic Engineer Intern
+        \begin{highlights}
+            \item Developed HMI software and programmed PLCs using Siemens TIA Portal.
+            \item Designed, machined and assembled mechanical parts for industrial machines.
+        \end{highlights}
+    \end{twocolentry}
+
+    
+
+    \section{Skills}
+    \begin{twocolentrysame}{
+        \textbf{DevOps} Git, Docker, Google Colab\\
+        \textbf{Languages} English, French, Spanish.\\
+        \textbf{Soft Skills} Teamwork, Self-Learning, Critical Thinking, Problem Solving, Communication Skills.
+        }
+        
+        \textbf{Coding Languages} C/C++, JAVA, Python, Javascript, Matlab\\      
+        \textbf{AI Frameworks} Pytorch, Tensorflow, Jetson Inference\\       
+        \textbf{Control System} Matlab, Simulink, Amesim, CoppeliaSim\\
+        \textbf{Mechanical Design} Solidworks, Catia, 3DExperience      
+
+    \end{twocolentrysame}
+
+
+
+
+    \section{Main Projects}
+    
+   % \begin{onecolentry}
+   % \textbf{National Student Entrepreneur (SNEE)}
+    %\begin{highlights}
+     %   \item Developing an application catering to dancers and choreographers’ needs.
+      %  \item Recognized by Pepite Bretagne for my entrepreneurial initiative.
+       % \item Gained access to resources, mentoring, and networks to support project development.\\
+    %\end{highlights}
+    %\end{onecolentry}
+
+    \begin{onecolentry}
+    \textbf{Pan-Tilt Tracker}
+    \begin{highlights}
+        \item Created a motorized smartphone holder with auto-tracking for capturing my dance sessions.
+        \item Developed the Android app for video capture and tracking. Designed and assembled 3D-printed parts.\\
+    \end{highlights}
+    \end{onecolentry}
+
+    \begin{onecolentry}
+        \textbf{Multicam}
+        \begin{highlights}
+            \item Deployed a multi-camera system for people tracking and monitoring using YOLO.
+            \item Programmed C++ firmware for ESP32-Cam and implemented network management for seamless operation.\\
+        \end{highlights}
+    \end{onecolentry}
+
+    \begin{onecolentry}
+        \textbf{Vehicle simulator game}
+        \begin{highlights}
+            \item Developed a vehicle simulator game using Unity, with custom drivetrain and wheel physics simulations.
+            \item Implemented classic AI algorithms for virtual opponents, leveraging geometry-based methods.\\
+
+        \end{highlights}
+    \end{onecolentry}
+    \textbf{Additional projects and informations can be found in my portfolio: \href{https://rayane-maker.github.io}{
+    %\normalsize\faGlobeAmericas\hspace*{0.13cm}
+    rayane-maker.github.io}}%   
+
+
+
+
+
+
+    
+    \section{Hobbies and Activities}
+\begin{onecolentry}{\begin{highlights}
+        \item Hip Hop Dance (2015 - Present, Public performances, {Styles} : Animation, Popping, Krump)
+        \item Shell Eco-marathon (2022, Main Pilot, {Location}: Assen, Netherlands)
+        \item Weight Training (2022 - Present)
+        \end{highlights}}
+        
+\end{onecolentry}
+
+
+\end{document}

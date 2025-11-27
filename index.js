@@ -30,7 +30,7 @@ Common.goToSection('section1-link', 'project-section', navbarHeight);
 Common.goToSection('section2-link', 'work-section', navbarHeight);
 
 // CV
-Common.goToURL('about-link', "media/pdfs/resume.pdf");
+Common.goToURL('about-link', "resume/resume.pdf");
 
 
 /************************ HERO PARTICLE SYSTEM ****************************** */
