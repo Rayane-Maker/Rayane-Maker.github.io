@@ -1,0 +1,14 @@
+# Fichiers générés automatiquement
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+main.synctex(busy)
+main.bcf
