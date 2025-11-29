@@ -3,7 +3,7 @@
         "image": "./media/images/products/pan-tilt.gif",
         "title": "Pan Tilt Tracker (Visual Servoing)",
 
-        "description": "Developed a motorized smartphone holder paired with an Android video recording app, enabling pan-and-tilt tracking and gesture controls for recording. Originally created for filming my dance practice sessions, this project will be expanded with an upcoming feature currently in development, aimed at facilitating the creation and practice of dance choreographies (Coming Soon!).",
+        "description": "Developed a motorized smartphone holder paired with its Android app, enabling pan-and-tilt tracking and gesture controls for video recording.",
                 "tags": [
                     "Deep Learning",
                     "Pose Estimation",
@@ -33,7 +33,7 @@
             {
                 "image": "./media/images/products/funanddrive.gif",
                 "title": "Fun And Drive (Car Game Simulator)",
-                "description": "Developed an open-world vehicle simulator game using Unity, featuring custom drivetrain and wheel physics simulations. While the primary focus is on cars, the game is designed to eventually support other vehicles, including bikes, airplanes, helicopters, and boats.",
+                "description": "Developed an open-world vehicle simulator game using Unity, featuring custom drivetrain and wheel physics simulations.",
                 "tags": [
                     "Game Development",
                     "Physics Simulation",
@@ -49,14 +49,14 @@
                     "Implemented classic AI algorithms for virtual opponents using geometry-based techniques.",
                     "Developed a race manager with a participant ranking system (1st, 2nd, 3rd, etc.).",
                     "Developed a dynamic player-following camera system.",
-                    "Designed and built a GUI dashboard system."
+                    "Designed and built a procedural GUI dashboard system."
                 ]
             },
 
             {
                 "image": "./media/images/products/multicam.gif",
                 "title": "Multicam (School Project)",
-                "description": "Collaborated in a team to develop a real-time multi-camera system for tracking, monitoring, and localizing individuals in potential danger during emergencies, enhancing firefighter operations through a tablet interface.",
+                "description": "Collaborated in a team to develop a real-time multi-camera system for tracking, monitoring, and localizing individuals in potential danger during emergencies.",
                 "tags": [
                     "Emergency Assistance",
                     "Navigation Guidance",
@@ -82,7 +82,7 @@
             {
                 "image": "./media/images/products/portfolio.gif",
                 "title": "Portfolio Website",
-                "description": "Designed and developed my portfolio website from scratch.",
+                "description": "Designed and developed my portfolio website using HTML, CSS, and JavaScript.",
                 "tags": [
                     "Web Development",
                     "QuadTree",
@@ -108,7 +108,7 @@
             {
                 "image": "./media/images/products/kin-website-2.png",
                 "title": "Applied Kinesiologist Website",
-                "description": "Designed and hosted a showcase website from scratch using HTML, CSS, and JavaScript to promote an applied kinesiologist's services and enable clients to schedule appointments via a contact form.",
+                "description": "Designed and hosted a showcase website using HTML, CSS, and JavaScript to promote an applied kinesiologist's services and enable clients to schedule appointments via a contact form.",
                 "tags": [
                     "Web Development",
                     "Web Design",
