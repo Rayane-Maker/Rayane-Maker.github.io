@@ -752,7 +752,7 @@ nav h1{
   transform: translateX(-50%);
   margin: 10px auto 15px 50%;
   font-weight: normal;
-  border: 2px solid var(--theme-color444);
+  border: 2px solid var(--theme-color44);
   background-color: inherit;
   font-size: 1em;
 }
@@ -823,6 +823,18 @@ nav h1{
   }
 
   
+}
+
+
+/* ********************************* BIO ************************************* */
+#intro-section strong {
+  font-family: 'Arial', cursive;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  color: var(--theme-color2);
+  /* text-shadow: 1px 3px 18px rgba(0, 0, 0, 0.3); */
 }
 
 
@@ -950,9 +962,9 @@ nav h1{
 }
 
 .project-tags-container > div {
-  border: 2px solid var(--theme-color88);
+  border: 2px solid var(--theme-color2);
   border-radius: 5px;
-  background-color: var(--theme-color44);
+  background-color: var(--theme-color2);
   padding: 0.1em;
   color: var(--theme-color99);
   text-align: center;
@@ -974,6 +986,7 @@ nav h1{
 #projects-grid ul li{
   list-style:disc;
   color: var(--theme-color2);
+  margin-left: 0;
 }
 
 
@@ -986,9 +999,9 @@ nav h1{
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--theme-color1);
+  color: var(--theme-color99);
   text-wrap: nowrap;
-  background-color: var(--theme-color99);
+  background-color: var(--theme-color2);
   border: 0px;
   font-size: 1em;
   margin-top: auto;
@@ -997,8 +1010,14 @@ nav h1{
 }
 
 .project-src-btn:hover{
-  background-color: var(--theme-color77);
+  background-color: var(--theme-color888);
 }
+
+.project-src-btn img.invert {
+  filter: invert(1) grayscale(1) contrast(200%);
+}
+
+
 
 .project-src-btn img{
   margin: 0;
