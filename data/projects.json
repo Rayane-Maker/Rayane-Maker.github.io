@@ -20,12 +20,12 @@
                     "3D Printing"
                 ],
                 "tasks": [
-                    "Implemented TensorFlow-based Pose Estimation (PoseNet) in the Android app",
-                    "Developed PID Controller within the Android app",
-                    "Enabled Bluetooth communication between the app and the holder",
-                    "Designed and programmed the embedded board (Arduino for V1, ESP32 for V2)",
                     "Designed and developed the entire hardware, including mechanical, electrical, and CAD models",
-                    "3D-printed parts"
+                    "Developed the Android app video recorder",
+                    "Implemented Pose Estimation (PoseNet) in the Android app",
+                    "Implemented PID Controller within the Android app",
+                    "Enabled Bluetooth communication between the app and the holder",
+                    "Developed the ESP32 embedded software"
                 ]
             },
         
@@ -44,11 +44,11 @@
                     "3D Game Geometry"
                 ],
                 "tasks": [
-                    "Implemented custom drivetrain and wheel physics.",
+                    "Made custom drivetrain and wheel physics.",
                     "Integrated clutch simulation within the drivetrain.",
-                    "Implemented classic AI algorithms for virtual opponents using geometry-based techniques.",
-                    "Developed a race manager with a participant ranking system (1st, 2nd, 3rd, etc.).",
-                    "Developed a dynamic player-following camera system.",
+                    "Implemented classic AI geometry based algorithms for opponents.",
+                    "Designed a ranking system (1st, 2nd, 3rd, etc.).",
+                    "Developed dynamic camera-following system.",
                     "Designed and built a procedural GUI dashboard system."
                 ]
             },
@@ -69,11 +69,11 @@
                     "Real-Time"
                 ],
                 "tasks": [
-                    "Led the team, enhancing leadership, communication, and teamwork skills.",
-                    "Developed central server software for camera video reception, image processing, and human activity classification.",
-                    "Implemented network management for seamless multi-camera operation.",
-                    "Programmed C++ firmware for ESP32-Cam modules.",
-                    "Contributed to Android tablet app development for video feedback and victim information display."
+                    "Managed the team.",
+                    "Developed server software for video reception and human activity classification.",
+                    "Managed network for multi-camera feedback.",
+                    "Programmed C++ firmware for ESP32 cameras.",
+                    "Contributed to Android app for real-time video feedback and victim info display."
                 ]
             },
 
@@ -121,10 +121,9 @@
                 ],
                 "tasks": [
                     "Developed a fully responsive website.",
-                    "Adapted the UI to align with the client’s brand identity.",
-                    "Integrated a contact form with email functionality using PHP.",
+                    "Integrated contact form with email functionality using PHP.",
                     "Implemented parallax effects for enhanced visual appeal.",
-                    "Designed a logo and a business card.",
+                    "Designed logo and business card.",
                     "Hosted the website on Hostinger."
                 ],
 
